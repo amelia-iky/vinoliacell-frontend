@@ -10,7 +10,11 @@ const Signin = () => {
   return (
     <>
       <Navbar />
-      <Form onSubmit={handleSignin}>
+      <Form className='py-7' onSubmit={handleSignin}>
+        <h1 className='text-xl font-semibold text-center'>
+          Satu akun. Apa pun perangkatnya. Khusus untuk Anda
+        </h1>
+        <p className='text-sm'>Masuk untuk mulai</p>
         <input
           type='email'
           placeholder='Email'
