@@ -8,7 +8,9 @@ export default {
         main: ['Kumbh Sans'],
       },
       colors: {
+        primary: '#dbf9fc',
         boxmaps: '#4C4C4C',
+        shadowform: '#73BEFF',
       },
     },
   },
