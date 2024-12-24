@@ -18,11 +18,11 @@ const Navbar = () => {
           <img className='w-28' src='/icons/logo.png' alt='logo' />
         </div>
 
-        {/* User Icon and Dropdown */}
+        {/* Dropdown */}
         <div className='relative px-20'>
           <FaRegCircleUser
             className='text-5xl cursor-pointer'
-            onClick={toggleMenu} // Toggle menu on click
+            onClick={toggleMenu}
           />
 
           {/* Dropdown Menu */}
@@ -33,7 +33,7 @@ const Navbar = () => {
                   <a href='/signin'>Login</a>
                 </li>
                 <li className='px-4 py-2 hover:bg-primary'>
-                  <a href='#register'>Register</a>
+                  <a href='/signup'>Register</a>
                 </li>
               </ul>
             </div>
