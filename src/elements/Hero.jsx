@@ -1,5 +1,7 @@
 import { MdOutlinePhonelinkSetup } from 'react-icons/md';
 import { CiLocationOn } from 'react-icons/ci';
+import { IoCallOutline } from 'react-icons/io5';
+import { MdOutlineEmail } from 'react-icons/md';
 
 const Hero = () => {
   return (
@@ -31,22 +33,31 @@ const Hero = () => {
 
           <tbody>
             <tr className='bg-white'>
-              <td className='flex flex-col'>
-                <h1 className='text-2xl font-medium'>Temukan kami</h1>
-                <div className='flex flex-row gap-2 pb-10'>
-                  <CiLocationOn className='text-2xl' />
-                  <p className='text-sm'>
+              <td className='flex flex-col w-80 px-10 pt-10 pb-28'>
+                <h1 className='text-xl font-medium'>Temukan kami</h1>
+                <div className='flex flex-row items-center gap-3 pb-10'>
+                  <CiLocationOn className='text-8xl' />
+                  <a
+                    className='text-sm'
+                    href='https://maps.app.goo.gl/XTQKWCoFwfm6jE5k6'
+                  >
                     Jl. Samratulangi, Penarukan, Kec. Buleleng, Kabupaten
                     Buleleng, Bali 81119
-                  </p>
+                  </a>
                 </div>
-                <h1 className='text-2xl font-medium'>Hubungi kami</h1>
-                <div className='flex flex-row gap-2'>
-                  <CiLocationOn className='text-2xl' />
-                  <p className='text-sm'>
-                    Jl. Samratulangi, Penarukan, Kec. Buleleng, Kabupaten
-                    Buleleng, Bali 81119
-                  </p>
+
+                <h1 className='text-xl font-medium'>Hubungi kami</h1>
+                <div className='flex flex-row items-center gap-5'>
+                  <IoCallOutline className='text-3xl' />
+                  <a className='text-sm' href='https://wa.me/6287762516192'>
+                    +6287762516192
+                  </a>
+                </div>
+                <div className='flex flex-row items-center gap-5 pb-3 border-b-2 '>
+                  <MdOutlineEmail className='text-3xl' />
+                  <a className='text-sm' href='mailto:fireflymylove@gmail.com'>
+                    fireflymylove@gmail.com
+                  </a>
                 </div>
               </td>
 
