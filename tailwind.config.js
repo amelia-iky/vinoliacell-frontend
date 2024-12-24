@@ -2,10 +2,14 @@
 export default {
   content: ['./index.html', './src/**/*.{js,jsx}'],
   theme: {
-    extend: {},
-    fontFamily: {
-      poppins: ['Poppins'],
-      main: ['Poppins'],
+    extend: {
+      fontFamily: {
+        sans: ['Kumbh Sans'],
+        main: ['Kumbh Sans'],
+      },
+      colors: {
+        boxmaps: '#4C4C4C',
+      },
     },
   },
   plugins: [],
