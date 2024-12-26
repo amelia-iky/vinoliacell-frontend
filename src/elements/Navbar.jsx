@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { PiUserCircleLight } from 'react-icons/pi';
 import { getUserName } from '../utils/Auth';
+import Swal from 'sweetalert2';
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -43,7 +44,18 @@ const Navbar = () => {
     sessionStorage.removeItem('token');
     setIsLogin(false);
     setShowMenu(false);
-    navigate('/');
+
+    // Alert
+    Swal.fire({
+      icon: 'success',
+      title: 'Logout berhasil',
+      text: 'Anda telah berhasil keluar!',
+      showConfirmButton: false,
+      timer: 2000,
+    });
+
+    // Redirect to signin
+    navigate('/signin');
   };
 
   return (
