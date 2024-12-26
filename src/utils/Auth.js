@@ -30,5 +30,9 @@ export const getUserRole = () => {
 // get user name
 export const getUserName = () => {
   const payload = getTokenPayload();
-  return payload.name;
+  try {
+    return payload.name || null;
+  } catch {
+    return null;
+  }
 };
