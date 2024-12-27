@@ -1,17 +1,25 @@
-import PropTypes from 'prop-types';
-import { PiUserCircleLight } from 'react-icons/pi';
+import { useNavigate } from 'react-router-dom';
+import { FaCircleUser } from 'react-icons/fa6';
 import { IoHammerOutline } from 'react-icons/io5';
 import { IoIosTimer } from 'react-icons/io';
 import { getUserName } from '../../utils/Auth';
 
 const Card = () => {
+  const navigate = useNavigate();
   const name = getUserName();
+
+  const handleProfileClick = () => {
+    navigate('/profile');
+  };
 
   return (
     <div className='flex justify-center'>
       <div className='flex flex-col justify-start bg-white mt-20 w-3/5 rounded-3xl p-10 gap-9'>
-        <div className='flex flex-row justify-start items-center gap-2'>
-          <PiUserCircleLight className='text-6xl cursor-pointer' />
+        <div
+          className='flex flex-row justify-start items-center gap-2 cursor-pointer'
+          onClick={handleProfileClick}
+        >
+          <FaCircleUser className='text-6xl text-gray-500' />
           <h1 className='text-xl font-medium'>{name}</h1>
         </div>
         <div className='flex flex-row justify-center gap-4'>
@@ -43,11 +51,6 @@ const Card = () => {
       </div>
     </div>
   );
-};
-
-Card.propTypes = {
-  //   title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
 };
 
 export default Card;
