@@ -70,13 +70,13 @@ const Navbar = () => {
         {/* Dropdown */}
         <div ref={dropdownRef}>
           {isLogin ? (
-            <div className='flex flex-row items-center gap-2'>
+            <div
+              className='flex flex-row items-center gap-4 cursor-pointer'
+              onClick={toggleMenu}
+            >
               <h1 className='text-xl font-medium'>Hi! {name}</h1>
               <div className='relative pr-20'>
-                <FaCircleUser
-                  className='text-5xl text-gray-500 cursor-pointer'
-                  onClick={toggleMenu}
-                />
+                <FaCircleUser className='text-5xl text-gray-500' />
                 {/* Dropdown Menu */}
                 {showMenu && (
                   <div className='absolute right-10 mt-2 w-32 shadow-lg'>
@@ -131,7 +131,7 @@ const Navbar = () => {
         </a>
         <a
           className='hover:border-2 hover:rounded-md hover:bg-slate-50 p-2'
-          href='#'
+          href='/layanan-perbaikan'
         >
           Layanan Perbaikan
         </a>

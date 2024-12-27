@@ -4,6 +4,7 @@ import Signin from './pages/Signin';
 import Signup from './pages/Signup';
 import UserDashboard from './pages/UserDashboard';
 import UserProfile from './pages/UserProfile';
+import UserService from './pages/UserService';
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
         {/* User Dashboard */}
         <Route path='/dashboard' element={<UserDashboard />} />
         <Route path='/profile' element={<UserProfile />} />
+        <Route path='/layanan-perbaikan' element={<UserService />} />
       </Routes>
     </BrowserRouter>
   );

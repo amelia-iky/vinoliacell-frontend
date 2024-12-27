@@ -3,7 +3,6 @@ import Navbar from '../elements/Navbar';
 import Form from '../components/Form';
 import Button from '../components/Button';
 import { useSignin } from '../hooks/useSignin';
-import Loading from '../components/Loading';
 
 const Signin = () => {
   const [email, setEmail] = useState('');
@@ -46,7 +45,7 @@ const Signin = () => {
           onClick={handleSubmit}
           className='w-56'
         >
-          {loading ? <Loading /> : 'Login'}
+          {loading ? 'Memuat...' : 'Login'}
         </Button>
         <p>
           Belum punya akun?{' '}

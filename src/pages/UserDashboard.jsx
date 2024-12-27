@@ -1,5 +1,5 @@
 import Navbar from '../elements/Navbar';
-import Card from '../elements/UserDashboard/Card';
+import Card from '../elements/UserPages/Card';
 
 const UserDashboard = () => {
   return (
