@@ -49,7 +49,10 @@ const Signin = () => {
           {loading ? <Loading /> : 'Login'}
         </Button>
         <p>
-          Belum punya akun? <a href='/signup'>Daftar</a>
+          Belum punya akun?{' '}
+          <a className='underline underline-offset-4' href='/signup'>
+            Daftar
+          </a>
         </p>
       </Form>
     </>
