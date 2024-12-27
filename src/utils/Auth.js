@@ -31,7 +31,47 @@ export const getUserRole = () => {
 export const getUserName = () => {
   const payload = getTokenPayload();
   try {
-    return payload.name || null;
+    return payload.userName || null;
+  } catch {
+    return null;
+  }
+};
+
+// get user full name
+export const getFullName = () => {
+  const payload = getTokenPayload();
+  try {
+    return payload.fullName || null;
+  } catch {
+    return null;
+  }
+};
+
+// get user email
+export const getUserEmail = () => {
+  const payload = getTokenPayload();
+  try {
+    return payload.email || null;
+  } catch {
+    return null;
+  }
+};
+
+// get user phone number
+export const getUserPhone = () => {
+  const payload = getTokenPayload();
+  try {
+    return payload.telp || null;
+  } catch {
+    return null;
+  }
+};
+
+// get user address date
+export const getUserAddress = () => {
+  const payload = getTokenPayload();
+  try {
+    return payload.address || null;
   } catch {
     return null;
   }
