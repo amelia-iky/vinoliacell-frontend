@@ -3,6 +3,7 @@ import LandingPages from './pages/LandingPages';
 import Signin from './pages/Signin';
 import Signup from './pages/Signup';
 import UserDashboard from './pages/UserDashboard';
+import UserProfile from './pages/UserProfile';
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
 
         {/* User Dashboard */}
         <Route path='/dashboard' element={<UserDashboard />} />
+        <Route path='/profile' element={<UserProfile />} />
       </Routes>
     </BrowserRouter>
   );
