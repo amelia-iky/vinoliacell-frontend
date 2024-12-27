@@ -16,7 +16,7 @@ const Card = () => {
     <div className='flex justify-center'>
       <div className='flex flex-col justify-start bg-white mt-20 w-3/5 rounded-3xl p-10 gap-9'>
         <div
-          className='flex flex-row justify-start items-center gap-2 cursor-pointer'
+          className='flex flex-row justify-start items-center w-fit gap-4 cursor-pointer'
           onClick={handleProfileClick}
         >
           <FaCircleUser className='text-6xl text-gray-500' />
