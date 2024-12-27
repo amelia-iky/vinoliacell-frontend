@@ -2,7 +2,6 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
-// import Loading from '../components/Loading';
 import { getUserName, getUserRole } from '../utils/Auth';
 
 export const useSignin = () => {
@@ -10,6 +9,7 @@ export const useSignin = () => {
   const navigate = useNavigate();
 
   const signin = async (email, password) => {
+    setLoading(true);
     try {
       const response = await axios.post('http://localhost:8000/api/signin', {
         email,
