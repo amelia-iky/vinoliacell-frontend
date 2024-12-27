@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { PiUserCircleLight } from 'react-icons/pi';
+import { FaCircleUser } from 'react-icons/fa6';
 import { getUserName } from '../utils/Auth';
 import Swal from 'sweetalert2';
 
@@ -73,16 +73,19 @@ const Navbar = () => {
             <div className='flex flex-row items-center gap-2'>
               <h1 className='text-xl font-medium'>Hi! {name}</h1>
               <div className='relative pr-20'>
-                <PiUserCircleLight
-                  className='text-5xl cursor-pointer'
+                <FaCircleUser
+                  className='text-5xl text-gray-500 cursor-pointer'
                   onClick={toggleMenu}
                 />
                 {/* Dropdown Menu */}
                 {showMenu && (
-                  <div className='absolute right-10 mt-2 w-32 shadow-lg bg-white'>
+                  <div className='absolute right-10 mt-2 w-32 shadow-lg'>
                     <ul className='flex flex-col'>
+                      <li className='flex justify-center bg-white hover:bg-primary border border-gray-300 rounded-md py-2'>
+                        <a href='/dashboard'>Dashboard</a>
+                      </li>
                       <li
-                        className='flex justify-center bg-red-400 hover:bg-red-500 rounded-md py-2 cursor-pointer'
+                        className='flex justify-center bg-red-500 hover:bg-red-600 border border-gray-300 rounded-md text-white py-2 cursor-pointer'
                         onClick={handleLogout}
                       >
                         Logout
@@ -94,8 +97,8 @@ const Navbar = () => {
             </div>
           ) : (
             <div className='relative px-20'>
-              <PiUserCircleLight
-                className='text-5xl cursor-pointer'
+              <FaCircleUser
+                className='text-5xl text-gray-500 cursor-pointer'
                 onClick={toggleMenu}
               />
               {/* Dropdown Menu */}
