@@ -1,5 +1,5 @@
 import Navbar from '../elements/Navbar';
-import StepForm from '../elements/UserPages/StepForm';
+import FormService from '../elements/UserPages/FormService';
 
 const UserService = () => {
   return (
@@ -9,7 +9,7 @@ const UserService = () => {
         <h1 className='text-3xl font-medium pt-10'>
           Pilih Jenis Perangkat Anda
         </h1>
-        <StepForm />
+        <FormService />
       </div>
     </>
   );
