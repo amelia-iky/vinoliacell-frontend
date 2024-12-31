@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Navbar from '../elements/Navbar';
-import Form from '../components/Form';
+import Form from '../components/FormAuth';
 import Button from '../components/Button';
 import { useSignin } from '../hooks/useSignin';
 
@@ -39,6 +39,7 @@ const Signin = () => {
           className='border-b-2 outline-none px-3 py-2 bg-white'
           required
         />
+
         <Button
           type='submit'
           variant={'primary'}
@@ -47,6 +48,7 @@ const Signin = () => {
         >
           {loading ? 'Memuat...' : 'Login'}
         </Button>
+
         <p>
           Belum punya akun?{' '}
           <a className='underline underline-offset-4' href='/signup'>
