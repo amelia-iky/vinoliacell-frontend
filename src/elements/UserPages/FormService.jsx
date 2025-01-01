@@ -1,17 +1,19 @@
 import Form from '../../components/Form';
 import Button from '../../components/Button';
 import { useFetchBrand } from '../../hooks/useFetchBrand';
+import { useFetchIssue } from '../../hooks/useFetchIssue';
 
 const FormService = () => {
-  const { data } = useFetchBrand();
+  const { data: brand } = useFetchBrand();
+  const { data: issue } = useFetchIssue();
 
   return (
     <div className='flex flex-col justify-center items-center w-1/4 gap-5'>
       <Form className='text-gray-700'>
         <p>Pilih Merek Anda</p>
         <select className='border-b-2 outline-none p-2'>
-          {data &&
-            data.map((item) => (
+          {brand &&
+            brand.map((item) => (
               <option value={item.id} key={item.id}>
                 {item.name}
               </option>
@@ -27,8 +29,8 @@ const FormService = () => {
 
         <p>Pilih Kerusakan Anda</p>
         <select className='border-b-2 outline-none p-2'>
-          {data &&
-            data.map((item) => (
+          {issue &&
+            issue.map((item) => (
               <option value={item.id} key={item.id}>
                 {item.name}
               </option>
