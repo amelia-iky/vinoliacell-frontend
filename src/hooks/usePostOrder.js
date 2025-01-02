@@ -11,13 +11,24 @@ export const usePostOrder = () => {
     setLoading(true);
     setError(null);
 
+    // Get token
+    const token = sessionStorage.getItem('token');
+
     try {
-      const response = await axios.post('http://localhost:8000/api/orders', {
-        brand,
-        model,
-        issue,
-        detail,
-      });
+      const response = await axios.post(
+        'http://localhost:8000/api/orders',
+        {
+          brand,
+          model,
+          issue,
+          detail,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
 
       if (response.status === 201) {
         // Set data to state
