@@ -1,4 +1,5 @@
 import Navbar from '../elements/Navbar';
+import TitlePages from '../components/TitlePages';
 import FormService from '../elements/UserPages/FormService';
 
 const UserService = () => {
@@ -6,9 +7,7 @@ const UserService = () => {
     <>
       <Navbar />
       <div className='flex flex-col justify-center items-center gap-5'>
-        <h1 className='text-3xl font-medium pt-10'>
-          Pilih Jenis Perangkat Anda
-        </h1>
+        <TitlePages>Pilih Jenis Perangkat Anda</TitlePages>
         <FormService />
       </div>
     </>
