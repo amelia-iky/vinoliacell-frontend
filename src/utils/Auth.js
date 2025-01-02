@@ -24,7 +24,11 @@ export const getUserId = () => {
 // get user role
 export const getUserRole = () => {
   const payload = getTokenPayload();
-  return payload.role;
+  try {
+    return payload.role || null;
+  } catch {
+    return null;
+  }
 };
 
 // get user name

@@ -1,41 +1,70 @@
 import Button from '../../components/Button';
+import Loading from '../../components/Loading';
+import { useFetchOrder } from '../../hooks/useFetchOrder';
 
 const HistoryCard = () => {
+  const { data, loading } = useFetchOrder();
+
+  if (loading) {
+    return <Loading />;
+  }
+
+  if (data.length === 0) {
+    return (
+      <div className='flex justify-center items-center bg-white gap-40 mx-96 rounded-xl border-2 border-gray-300 py-2 mt-7'>
+        <h1>Tidak ada riwayat</h1>
+      </div>
+    );
+  }
+
   return (
-    <div className='flex flex-row justify-center items-center bg-white gap-40 mx-60 rounded-xl border-2 border-gray-300 py-2 mt-7'>
+    <div className='flex flex-row justify-center items-center bg-white gap-28 mx-60 rounded-xl border-2 border-gray-300 py-2 mt-7'>
       <div className='flex items-center gap-5'>
-        <div>
-          <img src='/assets/samsung galaxy.jpg' alt='' />
-        </div>
-        <div className=''>
-          <table>
-            <tr>
-              <td>Merek</td>
-              <td className='px-2'>:</td>
-              <td>Samsung</td>
-            </tr>
-            <tr>
-              <td>Model</td>
-              <td className='px-2'>:</td>
-              <td>Galaxy</td>
-            </tr>
-            <tr>
-              <td>Masalah</td>
-              <td className='px-2'>:</td>
-              <td>Matot</td>
-            </tr>
-            <tr>
-              <td>ID Tiket</td>
-              <td className='px-2'>:</td>
-              <td>123</td>
-            </tr>
-            <tr>
-              <td>Status</td>
-              <td className='px-2'>:</td>
-              <td>Selesai</td>
-            </tr>
-          </table>
-        </div>
+        <img src='/assets/samsung galaxy.jpg' alt='' />
+
+        <table>
+          {data.map((data) => (
+            <tbody key={data.id}>
+              <tr>
+                <td>Merek</td>
+                <td className='px-2'>:</td>
+                <td>{data.brand}</td>
+              </tr>
+              <tr>
+                <td className='pt-1'>Model</td>
+                <td className='px-2'>:</td>
+                <td>{data.model}</td>
+              </tr>
+              <tr>
+                <td className='py-1'>Masalah</td>
+                <td className='px-2'>:</td>
+                <td>{data.issue}</td>
+              </tr>
+              <tr>
+                <td>ID Tiket</td>
+                <td className='px-2'>:</td>
+                <td>{data.id}</td>
+              </tr>
+              <tr>
+                <td className='pt-1'>Status</td>
+                <td className='px-2'>:</td>
+                <td
+                  className={`rounded-lg text-center ${
+                    data.status === 'Belum Selesai'
+                      ? 'bg-yellow-400'
+                      : data.status === 'Selesai'
+                      ? 'bg-green-400'
+                      : data.status === 'Tidak Selesai'
+                      ? 'bg-red-400'
+                      : 'bg-gray-400'
+                  }`}
+                >
+                  {data.status}
+                </td>
+              </tr>
+            </tbody>
+          ))}
+        </table>
       </div>
 
       <div className='flex justify-center w-1/3'>
@@ -43,7 +72,6 @@ const HistoryCard = () => {
           type='submit'
           variant={'primary'}
           //   onClick={handleSubmit}
-          //   className='w-56'
         >
           Cek Kondisi
         </Button>

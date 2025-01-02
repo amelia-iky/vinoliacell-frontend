@@ -3,12 +3,12 @@ import LandingPages from './pages/LandingPages';
 import Signin from './pages/Signin';
 import Signup from './pages/Signup';
 import AdminDashboard from './pages/AdminDasboard';
-import OrderPage from './pages/Orderan';
+import AdminOrder from './pages/AdminOrder';
 import UserDashboard from './pages/UserDashboard';
 import UserProfile from './pages/UserProfile';
 import UserService from './pages/UserService';
 import UserHistory from './pages/UserHistory';
-
+import ProtectedRoute from './components/ProtectedRoute';
 
 const App = () => {
   return (
@@ -26,15 +26,45 @@ const App = () => {
         <Route path='/signin' element={<Signin />} />
         <Route path='/signup' element={<Signup />} />
 
-        {/* Aadmin Dashboard */}
-        <Route path='/admin' element={<AdminDashboard />} />
-        <Route path='/order' element={<OrderPage />} />
+        {/* Admin Dashboard */}
+        <Route
+          path='/admin'
+          element={
+            <ProtectedRoute element={<AdminDashboard />} requiredRole='admin' />
+          }
+        />
+        <Route
+          path='/admin/order'
+          element={
+            <ProtectedRoute element={<AdminOrder />} requiredRole='admin' />
+          }
+        />
 
         {/* User Dashboard */}
-        <Route path='/dashboard' element={<UserDashboard />} />
-        <Route path='/profile' element={<UserProfile />} />
-        <Route path='/layanan-perbaikan' element={<UserService />} />
-        <Route path='/riwayat' element={<UserHistory />} />
+        <Route
+          path='/dashboard'
+          element={
+            <ProtectedRoute element={<UserDashboard />} requiredRole='user' />
+          }
+        />
+        <Route
+          path='/profile'
+          element={
+            <ProtectedRoute element={<UserProfile />} requiredRole='user' />
+          }
+        />
+        <Route
+          path='/layanan-perbaikan'
+          element={
+            <ProtectedRoute element={<UserService />} requiredRole='user' />
+          }
+        />
+        <Route
+          path='/riwayat'
+          element={
+            <ProtectedRoute element={<UserHistory />} requiredRole='user' />
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
