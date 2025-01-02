@@ -1,13 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaCircleUser } from 'react-icons/fa6';
 import { getUserName } from '../utils/Auth';
+import { getUserRole } from '../utils/Auth';
 import Swal from 'sweetalert2';
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [isLogin, setIsLogin] = useState(false);
-  const [name, setName] = useState('Guest');
+  const [name, setName] = useState(null);
+  const [role, setRole] = useState('Guest');
   const navigate = useNavigate();
   const dropdownRef = useRef(null);
 
@@ -16,8 +18,13 @@ const Navbar = () => {
     const status = sessionStorage.getItem('token');
     setIsLogin(!!status);
 
+    // Set user name
     const userName = getUserName();
     setName(userName);
+
+    // Set user role
+    const role = getUserRole();
+    setRole(role);
   }, [isLogin]);
 
   // Toggle menu visibility
@@ -82,7 +89,11 @@ const Navbar = () => {
                   <div className='absolute right-10 mt-2 w-32 shadow-lg'>
                     <ul className='flex flex-col'>
                       <li className='flex justify-center bg-white hover:bg-primary border border-gray-300 rounded-md py-2'>
-                        <a href='/dashboard'>Dashboard</a>
+                        {role === 'admin' ? (
+                          <Link to='/admin'>Dashboard</Link>
+                        ) : (
+                          <Link to='/dashboard'>Dashboard</Link>
+                        )}
                       </li>
                       <li
                         className='flex justify-center bg-red-500 hover:bg-red-600 border border-gray-300 rounded-md text-white py-2 cursor-pointer'
@@ -107,10 +118,10 @@ const Navbar = () => {
                   <ul className='flex flex-col'>
                     <div className='bg-white border border-gray-300 rounded-md'>
                       <li className='flex justify-center hover:bg-primary py-2 border-b border-gray-300'>
-                        <a href='/signin'>Login</a>
+                        <Link to='/signin'>Login</Link>
                       </li>
                       <li className='flex justify-center hover:bg-primary py-2'>
-                        <a href='/signup'>Register</a>
+                        <Link to='/signup'>Register</Link>
                       </li>
                     </div>
                   </ul>
@@ -123,30 +134,30 @@ const Navbar = () => {
 
       {/* Navigation */}
       <div className='flex flex-row justify-center items-center gap-10 h-14 py-2 border-b-2 border-slate-500'>
-        <a
+        <Link
           className='hover:border-2 hover:rounded-md hover:bg-slate-50 p-2'
-          href='/'
+          to='/'
         >
           Halaman Saya
-        </a>
-        <a
+        </Link>
+        <Link
           className='hover:border-2 hover:rounded-md hover:bg-slate-50 p-2'
-          href='/layanan-perbaikan'
+          to='/layanan-perbaikan'
         >
           Layanan Perbaikan
-        </a>
-        <a
+        </Link>
+        <Link
           className='hover:border-2 hover:rounded-md hover:bg-slate-50 p-2'
-          href='/riwayat'
+          to='/riwayat'
         >
           Riwayat
-        </a>
-        <a
+        </Link>
+        <Link
           className='hover:border-2 hover:rounded-md hover:bg-slate-50 p-2'
-          href='#'
+          to='#'
         >
           Tentang Kami
-        </a>
+        </Link>
       </div>
     </div>
   );
