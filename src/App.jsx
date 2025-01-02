@@ -7,6 +7,7 @@ import OrderPage from './pages/Orderan';
 import UserDashboard from './pages/UserDashboard';
 import UserProfile from './pages/UserProfile';
 import UserService from './pages/UserService';
+import UserHistory from './pages/UserHistory';
 
 
 const App = () => {
@@ -25,7 +26,6 @@ const App = () => {
         <Route path='/signin' element={<Signin />} />
         <Route path='/signup' element={<Signup />} />
 
-
         {/* Aadmin Dashboard */}
         <Route path='/admin' element={<AdminDashboard />} />
         <Route path='/order' element={<OrderPage />} />
@@ -34,7 +34,7 @@ const App = () => {
         <Route path='/dashboard' element={<UserDashboard />} />
         <Route path='/profile' element={<UserProfile />} />
         <Route path='/layanan-perbaikan' element={<UserService />} />
-
+        <Route path='/riwayat' element={<UserHistory />} />
       </Routes>
     </BrowserRouter>
   );
