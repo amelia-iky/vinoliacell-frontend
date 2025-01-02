@@ -6,6 +6,7 @@ import { getUserName, getUserRole } from '../utils/Auth';
 
 export const useSignin = () => {
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   const signin = async (email, password) => {
@@ -43,18 +44,19 @@ export const useSignin = () => {
         Swal.fire({
           icon: 'error',
           title: 'Login Gagal',
-          text: `Email atau Password salah!`,
+          text: 'Email atau Password salah!',
           showConfirmButton: false,
           timer: 2000,
         });
       }
     } catch (error) {
+      setError(error);
       // Handle error
       if (axios.isAxiosError(error && error.response)) {
         Swal.fire({
           icon: 'error',
-          title: 'Login Gagal',
-          text: 'Email atau password salah!',
+          title: 'Gagal',
+          text: 'Terdapat kesalahan!',
           showConfirmButton: false,
           timer: 2000,
         });
@@ -64,5 +66,5 @@ export const useSignin = () => {
     }
   };
 
-  return { signin, loading };
+  return { signin, loading, error };
 };
