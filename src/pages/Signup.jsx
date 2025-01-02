@@ -1,5 +1,5 @@
 import Navbar from '../elements/Navbar';
-import Form from '../components/Form';
+import Form from '../components/FormAuth';
 import Button from '../components/Button';
 
 const Signup = () => {
@@ -27,6 +27,7 @@ const Signup = () => {
           placeholder='Password'
           className='border-b-2 outline-none px-3 py-2 bg-white'
         />
+
         <Button type='button' variant={'primary'}>
           Register
         </Button>
