@@ -1,6 +1,6 @@
 const Card = () => {
   return (
-    <div className='gap-10 flex flex-row pt-10'>
+    <div className='gap-10 flex flex-row'>
       <div className='bg-white shadow-md rounded-lg p-5 w-1/2'>
         <h2 className='text-xl font-bold'>Jumlah Karyawan</h2>
         <p className='text-2xl text-center pt-2'>1</p>
