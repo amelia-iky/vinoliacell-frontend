@@ -1,4 +1,4 @@
-const OrderPage = () => {
+const AdminOrder = () => {
   const orders = [
     {
       id: 1,
@@ -77,4 +77,4 @@ const OrderPage = () => {
   );
 };
 
-export default OrderPage;
+export default AdminOrder;
