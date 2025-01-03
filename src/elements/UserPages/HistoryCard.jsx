@@ -6,10 +6,14 @@ const HistoryCard = () => {
   const { data, loading } = useFetchOrder();
 
   if (loading) {
-    return <Loading />;
+    return (
+      <div className='flex justify-center items-center ml-24 mt-24'>
+        <Loading />
+      </div>
+    );
   }
 
-  if (data.length === 0) {
+  if (!data || data.length === 0) {
     return (
       <div className='flex justify-center items-center bg-white gap-40 mx-96 rounded-xl border-2 border-gray-300 py-2 mt-7'>
         <h1>Tidak ada riwayat</h1>
