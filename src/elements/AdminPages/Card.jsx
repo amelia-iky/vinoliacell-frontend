@@ -14,7 +14,7 @@ const Card = () => {
       <div className='flex flex-col bg-white justify-center shadow-md rounded-lg px-5 py-3 w-1/2 gap-3'>
         <h2 className='text-xl font-bold'>Jumlah Pelanggan</h2>
         <div className='flex flex-row items-center justify-between'>
-          <p className='text-2xl'>1</p>
+          <p className='text-2xl'>2</p>
           <GrGroup className='text-4xl' />
         </div>
       </div>
