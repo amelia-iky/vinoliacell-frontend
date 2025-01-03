@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
@@ -6,6 +7,7 @@ export const usePostOrder = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   const order = async (brand, model, issue, detail) => {
     setLoading(true);
@@ -42,12 +44,26 @@ export const usePostOrder = () => {
           showConfirmButton: false,
           timer: 2000,
         });
+
+        // Redirect to history page
+        setTimeout(() => {
+          navigate('/riwayat');
+        }, 2000);
       } else if (response.status === 401) {
         // Alert error
         Swal.fire({
           icon: 'error',
           title: 'Order Gagal',
           text: 'Order gagal dibuat!',
+          showConfirmButton: false,
+          timer: 2000,
+        });
+      } else if (response.status === 404) {
+        // Alert error
+        Swal.fire({
+          icon: 'error',
+          title: 'Gagal Memuat Data',
+          text: 'Belum ada order!',
           showConfirmButton: false,
           timer: 2000,
         });
