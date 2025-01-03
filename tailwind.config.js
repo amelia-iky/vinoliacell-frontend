@@ -12,6 +12,7 @@ export default {
         boxmaps: '#4C4C4C',
         shadowform: '#73BEFF',
         abutipis: '#E5E5E5',
+        birucustom: '#4465BB',
         pink: '#FF91EB',
       },
     },
