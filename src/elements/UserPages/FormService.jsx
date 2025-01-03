@@ -9,7 +9,7 @@ import Swal from 'sweetalert2';
 const FormService = () => {
   const { data: brand } = useFetchBrand();
   const { data: issue } = useFetchIssue();
-  const { order } = usePostOrder();
+  const { order, loading } = usePostOrder();
 
   // States for form inputs
   const [selectedBrand, setSelectedBrand] = useState('');
@@ -98,7 +98,7 @@ const FormService = () => {
         onClick={handleSubmit}
         className='w-fit mt-5'
       >
-        Simpan
+        {loading ? 'Simpan' : 'Menyimpan...'}
       </Button>
     </div>
   );
