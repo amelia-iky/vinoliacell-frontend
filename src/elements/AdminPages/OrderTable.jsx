@@ -33,7 +33,7 @@ const OrderTable = () => {
               <td>{index + 1}</td>
               <td>{data.id}</td>
               <td>
-                {format(new Date(data.created_at), 'dd MMMM yyyy', {
+                {format(new Date(data.user.created_at), 'dd MMMM yyyy', {
                   locale: id,
                 })}
               </td>
