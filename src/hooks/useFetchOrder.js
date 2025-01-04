@@ -11,13 +11,10 @@ export const useFetchOrder = () => {
       setLoading(true);
       setError(null);
 
-      // Get token
-      const token = sessionStorage.getItem('token');
-
       try {
         const response = await axios.get('http://localhost:8000/api/orders', {
           headers: {
-            Authorization: `Bearer ${token}`,
+            Authorization: `Bearer ${sessionStorage.getItem('token')}`,
           },
         });
 
