@@ -3,7 +3,6 @@ import LandingPages from './pages/LandingPages';
 import Signin from './pages/Signin';
 import Signup from './pages/Signup';
 import AdminDashboard from './pages/AdminDasboard';
-import AdminOrder from './pages/AdminOrder';
 import UserDashboard from './pages/UserDashboard';
 import UserProfile from './pages/UserProfile';
 import UserService from './pages/UserService';
@@ -33,12 +32,6 @@ const App = () => {
             <ProtectedRoute element={<AdminDashboard />} requiredRole='admin' />
           }
         />
-        <Route
-          path='/admin/order'
-          element={
-            <ProtectedRoute element={<AdminOrder />} requiredRole='admin' />
-          }
-        />
 
         {/* User Dashboard */}
         <Route
@@ -60,7 +53,7 @@ const App = () => {
           }
         />
         <Route
-          path='/riwayat'
+          path='/status-perbaikan'
           element={
             <ProtectedRoute element={<UserHistory />} requiredRole='user' />
           }
