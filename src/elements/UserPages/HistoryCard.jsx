@@ -49,14 +49,16 @@ const HistoryCard = () => {
                 <td className='pt-1'>Status</td>
                 <td className='px-2'>:</td>
                 <td
-                  className={`rounded-lg text-center ${
-                    data.status === 'Belum Selesai'
-                      ? 'bg-yellow-400'
-                      : data.status === 'Selesai'
-                      ? 'bg-green-400'
-                      : data.status === 'Tidak Selesai'
-                      ? 'bg-red-400'
-                      : 'bg-gray-400'
+                  className={`p-1 text-white rounded-lg text-center ${
+                    data.status === 'Pesanan Diterima'
+                      ? 'bg-pink'
+                      : data.status === 'Proses Perbaikan'
+                      ? 'bg-yellow-500'
+                      : data.status === 'Perbaikan Selesai'
+                      ? 'bg-green-500'
+                      : data.status === 'Pesanan Ditolak'
+                      ? 'bg-red-500'
+                      : 'bg-white'
                   }`}
                 >
                   {data.status}
