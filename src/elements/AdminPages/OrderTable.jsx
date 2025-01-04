@@ -1,17 +1,33 @@
+import { useState } from 'react';
 import { format } from 'date-fns';
 import { id } from 'date-fns/locale';
-import Loading from '../../components/Loading';
-import { useFetchOrder } from '../../hooks/useFetchOrder';
-import Button from '../../components/Button';
 import { FaRegEdit } from 'react-icons/fa';
 import { MdOutlineDelete } from 'react-icons/md';
+import Loading from '../../components/Loading';
+import Button from '../../components/Button';
+import OrderDetail from './OrderDetail';
+import { useFetchOrder } from '../../hooks/useFetchOrder';
 
 const OrderTable = () => {
+  const [popupVisible, setPopupVisible] = useState(false);
+  const [selectedOrderId, setSelectedOrderId] = useState(null);
   const { data, loading } = useFetchOrder();
 
   if (loading) {
     return <Loading />;
   }
+
+  // Fungsi untuk membuka popup
+  const handleEditClick = (id) => {
+    setSelectedOrderId(id);
+    setPopupVisible(true);
+  };
+
+  // Fungsi untuk menutup popup
+  const handlePopupClose = () => {
+    setPopupVisible(false);
+    setSelectedOrderId(null);
+  };
 
   return (
     <div className='mt-10 '>
@@ -41,13 +57,22 @@ const OrderTable = () => {
               <td>{data.brand}</td>
               <td>{data.issue}</td>
               <td className='flex p-2 gap-2 justify-center items-center'>
-                <Button variant={'primary'} icon={FaRegEdit}></Button>
                 <Button variant={'deleted'} icon={MdOutlineDelete}></Button>
+                <Button
+                  variant={'primary'}
+                  onClick={() => handleEditClick(data.id)}
+                  icon={FaRegEdit}
+                ></Button>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
+
+      {/* Popup */}
+      {popupVisible && (
+        <OrderDetail orderId={selectedOrderId} closePopup={handlePopupClose} />
+      )}
     </div>
   );
 };
