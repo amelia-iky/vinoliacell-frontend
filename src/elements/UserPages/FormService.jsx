@@ -9,7 +9,7 @@ import Swal from 'sweetalert2';
 const FormService = () => {
   const { data: brand } = useFetchBrand();
   const { data: issue } = useFetchIssue();
-  const { order, loading } = usePostOrder();
+  const { postOrder, loading } = usePostOrder();
 
   // States for form inputs
   const [selectedBrand, setSelectedBrand] = useState('');
@@ -33,7 +33,7 @@ const FormService = () => {
       return;
     }
 
-    await order(selectedBrand, model, selectedIssue, detail);
+    await postOrder(selectedBrand, model, selectedIssue, detail);
   };
 
   return (
