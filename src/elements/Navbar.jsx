@@ -148,9 +148,9 @@ const Navbar = () => {
         </Link>
         <Link
           className='hover:border-2 hover:rounded-md hover:bg-slate-50 p-2'
-          to='/riwayat'
+          to='/status-perbaikan'
         >
-          Riwayat
+          Status Perbaikan
         </Link>
         <Link
           className='hover:border-2 hover:rounded-md hover:bg-slate-50 p-2'
