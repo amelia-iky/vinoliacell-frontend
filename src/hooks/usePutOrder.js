@@ -27,6 +27,10 @@ export const usePutOrder = (orderId) => {
           showConfirmButton: false,
           timer: 2000,
         });
+
+        setTimeout(() => {
+          window.location.reload();
+        }, 1500);
       } else {
         // Handle other non-success statuses if needed
         Swal.fire({
