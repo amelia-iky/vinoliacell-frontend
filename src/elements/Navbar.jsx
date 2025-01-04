@@ -133,32 +133,34 @@ const Navbar = () => {
       </div>
 
       {/* Navigation */}
-      <div className='flex flex-row justify-center items-center gap-10 h-14 py-2 border-b-2 border-slate-500'>
-        <Link
-          className='hover:border-2 hover:rounded-md hover:bg-slate-50 p-2'
-          to='/'
-        >
-          Halaman Saya
-        </Link>
-        <Link
-          className='hover:border-2 hover:rounded-md hover:bg-slate-50 p-2'
-          to='/layanan-perbaikan'
-        >
-          Layanan Perbaikan
-        </Link>
-        <Link
-          className='hover:border-2 hover:rounded-md hover:bg-slate-50 p-2'
-          to='/status-perbaikan'
-        >
-          Status Perbaikan
-        </Link>
-        <Link
-          className='hover:border-2 hover:rounded-md hover:bg-slate-50 p-2'
-          to='#'
-        >
-          Tentang Kami
-        </Link>
-      </div>
+      {role !== 'admin' && (
+        <div className='flex flex-row justify-center items-center gap-10 h-14 py-2 border-b-2 border-slate-500'>
+          <Link
+            className='hover:border-2 hover:rounded-md hover:bg-slate-50 p-2'
+            to='/'
+          >
+            Halaman Saya
+          </Link>
+          <Link
+            className='hover:border-2 hover:rounded-md hover:bg-slate-50 p-2'
+            to='/layanan-perbaikan'
+          >
+            Layanan Perbaikan
+          </Link>
+          <Link
+            className='hover:border-2 hover:rounded-md hover:bg-slate-50 p-2'
+            to='/status-perbaikan'
+          >
+            Status Perbaikan
+          </Link>
+          {/* <Link
+            className='hover:border-2 hover:rounded-md hover:bg-slate-50 p-2'
+            to='#'
+          >
+            Tentang Kami
+          </Link> */}
+        </div>
+      )}
     </div>
   );
 };
