@@ -9,12 +9,9 @@ export const usePostOrder = () => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
-  const order = async (brand, model, issue, detail) => {
+  const postOrder = async (brand, model, issue, detail) => {
     setLoading(true);
     setError(null);
-
-    // Get token
-    const token = sessionStorage.getItem('token');
 
     try {
       const response = await axios.post(
@@ -27,7 +24,7 @@ export const usePostOrder = () => {
         },
         {
           headers: {
-            Authorization: `Bearer ${token}`,
+            Authorization: `Bearer ${sessionStorage.getItem('token')}`,
           },
         }
       );
@@ -47,7 +44,7 @@ export const usePostOrder = () => {
 
         // Redirect to history page
         setTimeout(() => {
-          navigate('/riwayat');
+          navigate('/status-perbaikan');
         }, 2000);
       } else if (response.status === 401) {
         // Alert error
@@ -85,5 +82,5 @@ export const usePostOrder = () => {
     }
   };
 
-  return { order, data, loading, error };
+  return { postOrder, data, loading, error };
 };
