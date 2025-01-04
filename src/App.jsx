@@ -8,6 +8,7 @@ import UserProfile from './pages/UserProfile';
 import UserService from './pages/UserService';
 import UserHistory from './pages/UserHistory';
 import ProtectedRoute from './components/ProtectedRoute';
+import UnauthorizedPages from './pages/UnauthorizedPages';
 
 const App = () => {
   return (
@@ -24,6 +25,9 @@ const App = () => {
         {/* Authentication */}
         <Route path='/signin' element={<Signin />} />
         <Route path='/signup' element={<Signup />} />
+
+        {/* Unauthorized */}
+        <Route path='/unauthorized' element={<UnauthorizedPages />} />
 
         {/* Admin Dashboard */}
         <Route
