@@ -6,7 +6,7 @@ const UserHistory = () => {
   return (
     <>
       <Navbar />
-      <TitlePages>Riwayat</TitlePages>
+      <TitlePages>Status Perbaikan</TitlePages>
       <HistoryCard />
     </>
   );
