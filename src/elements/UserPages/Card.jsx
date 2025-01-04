@@ -41,9 +41,12 @@ const Card = () => {
           <div className='flex flex-row bg-pink w-96 h-full rounded-3xl p-5 gap-5 items-center'>
             <IoIosTimer className='text-9xl rotate-45' />
             <div className='flex flex-col items-start gap-4'>
-              <p>Ingin tahu riwayat perbaikan handphone Anda? Cek sekarang!</p>
-              <a className='underline underline-offset-4' href='/riwayat'>
-                Riwayat
+              <p>Ingin tahu status perbaikan handphone Anda? Cek sekarang!</p>
+              <a
+                className='underline underline-offset-4'
+                href='/status-perbaikan'
+              >
+                Status Perbaikan
               </a>
             </div>
           </div>
