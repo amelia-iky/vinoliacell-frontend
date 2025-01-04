@@ -1,7 +1,6 @@
 const Loading = () => (
   <div className='flex justify-center items-center ml-24 mt-20'>
-    <div className='w-16 h-16 border-4 border-gray-300 border-t-primary rounded-full animate-spin'></div>
-    <p className='ml-4 text-lg font-semibold text-primary'>Loading...</p>
+    <div className='w-16 h-16 border-4 border-gray-400 border-t-stone-50 rounded-full animate-spin'></div>
   </div>
 );
 
