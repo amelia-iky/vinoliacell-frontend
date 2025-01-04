@@ -98,7 +98,7 @@ const FormService = () => {
         onClick={handleSubmit}
         className='w-fit mt-5'
       >
-        {loading ? 'Simpan' : 'Menyimpan...'}
+        {loading ? 'Menyimpan...' : 'Simpan'}
       </Button>
     </div>
   );
