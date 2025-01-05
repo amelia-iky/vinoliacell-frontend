@@ -6,8 +6,7 @@ const ButtonIcon = ({ type, onClick, variant, children, icon: Icon }) => {
 
   const variantClass = {
     primary: 'bg-blue-500 hover:bg-blue-600 text-white',
-    secondary:
-      'bg-transparent border border-primary-dark text-[#515151] text-sm',
+    secondary: 'bg-purple-500 hover:bg-purple-600 text-white',
     deleted: 'bg-red-500 text-white hover:bg-red-600',
     disabled: 'bg-gray-300 text-gray-500 cursor-not-allowed',
   };
