@@ -24,30 +24,35 @@ const OrderData = ({ orderId }) => {
       <table>
         <tbody key={data.id}>
           <tr>
-            <td>Merek</td>
+            <td className='font-semibold'>Merek</td>
             <td className='px-2'>:</td>
             <td>{data.brand}</td>
           </tr>
           <tr>
-            <td className='pt-1'>Model</td>
+            <td className='pt-1 font-semibold'>Model</td>
             <td className='px-2'>:</td>
             <td>{data.model}</td>
           </tr>
           <tr>
-            <td className='py-1'>Masalah</td>
+            <td className='py-1 font-semibold'>Masalah</td>
             <td className='px-2'>:</td>
             <td>{data.issue}</td>
           </tr>
           <tr>
-            <td>ID Tiket</td>
+            <td className='font-semibold'>ID Tiket</td>
             <td className='px-2'>:</td>
             <td>{data.id}</td>
           </tr>
           <tr>
-            <td className='pt-1'>Status</td>
+            <td className='font-semibold py-1'>Keterangan</td>
+            <td className='px-2'>:</td>
+            <td>{data.information || '-'}</td>
+          </tr>
+          <tr>
+            <td className='pt-1 font-semibold'>Status</td>
             <td className='px-2'>:</td>
             <td
-              className={`py-2 px-3 text-white rounded-lg text-center ${
+              className={`py-1 px-3 text-white rounded-full text-center ${
                 data.status === 'Pesanan Diterima'
                   ? 'bg-pink'
                   : data.status === 'Proses Perbaikan'

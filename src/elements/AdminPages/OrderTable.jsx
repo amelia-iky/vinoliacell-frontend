@@ -62,9 +62,9 @@ const OrderTable = () => {
                 })}
               </td>
               <td>{data.user.fullName}</td>
-              <td>{data.issue}</td>
+              <td className='px-3'>{data.issue}</td>
               <td
-                className={`my-10 text-white rounded-lg text-center px-2 ${
+                className={`flex text-white rounded-full text-center justify-center items-center py-1 px-3 mt-2 ${
                   data.status === 'Pesanan Diterima'
                     ? 'bg-pink'
                     : data.status === 'Proses Perbaikan'
@@ -78,17 +78,19 @@ const OrderTable = () => {
               >
                 {data.status}
               </td>
-              <td className='flex p-2 gap-2 justify-center items-center'>
-                <Button
-                  variant={'deleted'}
-                  onClick={() => handleDeleteClick(data.id)}
-                  icon={MdOutlineDelete}
-                ></Button>
-                <Button
-                  variant={'primary'}
-                  onClick={() => handleEditClick(data.id)}
-                  icon={FaRegEdit}
-                ></Button>
+              <td className='p-2 justify-center items-center'>
+                <div className='flex gap-2 pl-4'>
+                  <Button
+                    variant={'deleted'}
+                    onClick={() => handleDeleteClick(data.id)}
+                    icon={MdOutlineDelete}
+                  ></Button>
+                  <Button
+                    variant={'primary'}
+                    onClick={() => handleEditClick(data.id)}
+                    icon={FaRegEdit}
+                  ></Button>
+                </div>
               </td>
             </tr>
           ))}
