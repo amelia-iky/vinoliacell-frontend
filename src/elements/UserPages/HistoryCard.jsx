@@ -64,7 +64,7 @@ const HistoryCard = () => {
                 <td
                   className={`py-1 px-3 text-white rounded-full text-center ${
                     data.status === 'Pesanan Diterima'
-                      ? 'bg-pink'
+                      ? 'bg-blue-500'
                       : data.status === 'Proses Perbaikan'
                       ? 'bg-yellow-500'
                       : data.status === 'Perbaikan Selesai'

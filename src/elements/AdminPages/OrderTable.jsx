@@ -66,7 +66,7 @@ const OrderTable = () => {
               <td
                 className={`flex text-white rounded-full text-center justify-center items-center py-1 px-3 mt-2 ${
                   data.status === 'Pesanan Diterima'
-                    ? 'bg-pink'
+                    ? 'bg-blue-500'
                     : data.status === 'Proses Perbaikan'
                     ? 'bg-yellow-500'
                     : data.status === 'Perbaikan Selesai'
