@@ -153,12 +153,6 @@ const Navbar = () => {
           >
             Status Perbaikan
           </Link>
-          {/* <Link
-            className='hover:border-2 hover:rounded-md hover:bg-slate-50 p-2'
-            to='#'
-          >
-            Tentang Kami
-          </Link> */}
         </div>
       )}
     </div>
